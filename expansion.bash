@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#TEST SET 1
+declare foo="superstring"
+echo
+echo "Whole string: " $foo
+echo "Length of strong: " ${#foo}
+echo "Susbstring: " ${foo:5:3}
+
+# TEST SET 2
+foo=$(wc -l itemlist.txt)
+echo
+echo "Whole string: " $foo		# echo input
+echo "Length of string: " ${#foo}	#echo length of foo
+echo `expr substr $foo 1 2`
+echo "Whole string: " $foo		# echo output
+
+# NOTES
+# echo ${foo:0:2} # extract 2 chars starting at index 0
+# echo `expr match "$foo" '[^0-9]'`	#attempt to match numeric substring in foo
+# echo ${foo%%'[\ *l]'}	#delete longest match of non-numerics from foo then echo remainder
