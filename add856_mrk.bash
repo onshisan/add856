@@ -46,18 +46,17 @@
 
 
 declare -i processedItems=0
-# declare -i errorItems=0
+# declare -i errorItems=0																											# error reporting not yet implemented
 
 while IFS='' read -r item || [ -n "$item" ]; do
 	file="${item}_meta.mrk"
-	[[ ! -f "$file" ]] && continue		# skip bad items / missing files (add error reporting by incrementing $errorItems here?) 						
-	echo "=856  40\$uhttps://archive.org/details/$item\$zFull text available at / Plein texte au site : Archive.org" >> "$file"		# [add carriage return after .org] append the identifier to the file (add code to insert user input here later; $z subfield hard-coded for now)
-	echo -e "For identifier '\033[37;44m$item\033[0m' : 856 tag appended to '\033[37;41m$file\033[0m'" 		# report progress onscreen
-	((processedItems++))	#increment count of items processed so far
+	[[ ! -f "$file" ]] && continue																									# skip bad items / missing files (add error reporting by incrementing $errorItems here?) 						
+	echo "=856  40\$uhttps://archive.org/details/$item\$zFull text available at / Plein texte au site : Archive.org" >> "$file"		# [need to add carriage return after .org] append the identifier to the file (add code to insert user input here later; $z subfield hard-coded for now)
+	echo -e "For identifier '\033[37;44m$item\033[0m' : 856 tag appended to '\033[37;41m$file\033[0m'" 								# report progress onscreen
+	((processedItems++))																											# increment count of items processed so far
 done < itemlist.txt
 
-# report total items processed and time elapsed
-if [ $SECONDS -lt 1 ]
+if [ $SECONDS -lt 1 ]																												# report total items processed and time elapsed
 then
 	echo "$processedItems items processed in < 1 second"
 else
