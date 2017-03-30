@@ -53,18 +53,23 @@ See Library of Congress MARC 21 bibliographic format spec, esp. http://www.loc.g
 
 # // TEST COMMANDS
 
-At the Bash command prompt, enter the following to familiarize yourself with the script. 
+At the Bash command prompt, enter the following to familiarize yourself with the .mrk version of add856. 
 
 Always run the script from the same directory as itemlist.txt and the batch of .mrk files to be processed.
 
-$ touch {1..1000}_meta.mrk  # generate a set of 1000 test files:
+1) Generate a set of 1000 test files
+$ touch {1..1000}_meta.mrk
 
-$ ls -1 *.mrk | sed -e 's/\..*$//' | cat > itemlist.txt; sed -i 's/_meta//g' itemlist.txt  # generate itemlist.txt based on the .mrk files in your working directory, then strip "_meta" from each row to format for processing
+2) Generate itemlist.txt based on the .mrk files in your working directory, then strip the "_meta" suffix from each row to match Archive.org's identifier list / CSV output format for processing:
+$ ls -1 *.mrk | sed -e 's/\..*$//' | cat > itemlist.txt; sed -i 's/_meta//g' itemlist.txt
 
-$ bash add856_mrk.bash  # run script using test files
+3) Run script using test files:
+$ bash add856_mrk.bash 
 
-$ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll}_meta.mrk  # view contents of randomly-chosen file from test batch
+4) Display contents of randomly-chosen file from test batch for verification:
+$ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll}_meta.mrk
 
+5) Delete set of test files (if you modified the set size in step one, do the same here):
 $ rm {1..1000}_meta.mrk; rm itemlist.txt  # delete test files:
 
 
