@@ -1,6 +1,6 @@
 # // add856
 
-A simple Bash script to add 856 field tags to MARC records harvested from Archive.org.
+A simple Bash script to add 856 field tags to MARC records harvested from [Archive.org](http://archive.org).
 
 Current status: not ready for the limelight! But feel free to browse.
 
@@ -16,17 +16,17 @@ Please note that add 856's output may require further processing to ensure full 
 
 Be sure to backup, verify, validate, and spot-check your output before proceeding!
 
-See Library of Congress MARC 21 bibliographic format spec, esp. http://www.loc.gov/marc/bibliographic/bd856.html for background.
+See Library of Congress' [MARC 21 bibliographic format](http://www.loc.gov/marc/bibliographic/) spec, especially [regarding the 856 field tag](http://www.loc.gov/marc/bibliographic/bd856.html) for background.
 
 # // METHOD
 
-1)	Obtain a CSV for the items of interest to you using IA's advanced search template here:
+1)	Obtain a CSV for the items of interest to you using [Archive.org's advanced search template](https://archive.org/advanced.search.php) here:
         https://archive.org/advanced.search.php
 
 2)	Using a text editor, delete "identifier" from the first row and re-name the file "itemlist.txt" for use with this script.
 
 3)	Save itemlist.txt with Unix end-of-line (EOL) or otherwise convert it if you are text-editing on a Windows machine.
-    If your text editor does not support EOL conversion, see suggestions here:
+    If your text editor does not support EOL conversion, see [suggestions](https://kb.iu.edu/d/acux) here:
          https://kb.iu.edu/d/acux
 
 4)	Harvest .mrc files for the set of items defined by itemlist.txt using wget at the Bash command prompt as follows:
@@ -38,8 +38,9 @@ $ wget -r -H -nc -np -nH --cut-dirs=1 -A .mrc -e robots=off -l1 -i itemlist.txt 
     In this way you may obtain the full-text of each item from Archive.org along with its metadata if you wish.
     NB: Depending on the length of your itemlist.txt file and your connection speed, this may take a long time.
 
-5)  Batch process .mrc files to .mrk format using MarcEdit, available here: 
+5)  Batch process .mrc files to .mrk format using [MarcEdit](http://marcedit.reeset.net/downloads): 
         http://marcedit.reeset.net/downloads
+        
     MarcEdit saves the new .mrk files in a sub-directory called "/processed_files".
     You may wish with copy the script and itemlist.txt there before continuing.
     Alternatively, move the files to the same location as the script and itemlist.txt.
