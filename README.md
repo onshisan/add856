@@ -20,7 +20,7 @@ See Library of Congress' [MARC 21 bibliographic format](http://www.loc.gov/marc/
 
 # // METHOD
 
-1)	Obtain a CSV for the items of interest to you using [Archive.org's advanced search template](https://archive.org/advanced.search.php) here:
+1)	Obtain a CSV for the items of interest to you using [Archive.org's advanced search template](https://archive.org/advanced.search.php) here:</b>
 > https://archive.org/advanced.search.php
 
 2)	Using a text editor, delete "identifier" from the first row and re-name the file "itemlist.txt" for use with this script.
@@ -34,7 +34,7 @@ $ wget -r -H -nc -np -nH --cut-dirs=1 -A .mrc -e robots=off -l1 -i itemlist.txt 
 ``` 
 You can adjust "-A" flag parameters to download other file formats (e.g., .xml, txt, .pdf) at the same time. In this way you may obtain the full-text of each item from Archive.org along with its metadata if you wish.
 
-<b>NB: Depending on the length of your itemlist.txt file and your connection speed, this may take a <i>long</i> time.</b>
+<i><b>NB</b>: Depending on the length of your itemlist.txt file and your connection speed, this may take a <u>long</u></i>
 
 5)  Batch process .mrc files to .mrk format using [MarcEdit](http://marcedit.reeset.net/downloads): 
 > http://marcedit.reeset.net/downloads
