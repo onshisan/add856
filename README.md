@@ -32,9 +32,9 @@ See Library of Congress' [MARC 21 bibliographic format](http://www.loc.gov/marc/
 ```shell
 $ wget -r -H -nc -np -nH --cut-dirs=1 -A .mrc -e robots=off -l1 -i itemlist.txt -B 'http://archive.org/download/'
 ``` 
-Adjust "-A" flag parameters to download other file formats (e.g., .xml, txt, .pdf) at the same time. In this way you may obtain the full-text of each item from Archive.org along with its metadata if you wish.
+You can adjust "-A" flag parameters to download other file formats (e.g., .xml, txt, .pdf) at the same time. In this way you may obtain the full-text of each item from Archive.org along with its metadata if you wish.
 
-NB: Depending on the length of your itemlist.txt file and your connection speed, this may take a long time.
+# NB: Depending on the length of your itemlist.txt file and your connection speed, this may take a long time.
 
 5)  Batch process .mrc files to .mrk format using [MarcEdit](http://marcedit.reeset.net/downloads): 
 > http://marcedit.reeset.net/downloads
@@ -43,11 +43,18 @@ MarcEdit saves the new .mrk files in a sub-directory called "/processed_files". 
 
 6)  Review and edit $z subfield display text in line 27 below to meet your needs.
 
-7)  Run this script at the Bash command prompt in the /processed_files directory. Alternatively, run it wherever the batch of .mrk files and your itemlist.txt file reside. Tip: If the script runs but unexpectedly processes 0 records, double-check itemlist.txt has Unix EOL (See (3) above!) and contains identifiers corresponding to your batch of metadata files.
+7)  Run this script at the Bash command prompt in the /processed_files directory.
+
+Alternatively, run it wherever the batch of .mrk files and your itemlist.txt file reside.
+
+Tip: If the script runs but unexpectedly processes 0 records, double-check itemlist.txt has Unix EOL (See (3) above!) and contains identifiers corresponding to your batch of metadata files.
 
 8) Open an arbitrarily-selected .mrk file in MarcEdit and validate to ensure there are no issues before proceeding. Consider making any necessary revisions through batch processing using MarcEdit.
 
-9) Merge and/or convert .mrk files to .mrc or other file format(s) as desired for further processing or OPAC import. 
+9) Merge and/or convert .mrk files to .mrc or other file format(s) as desired for further processing or OPAC import.
+
+10) Enjoy your freshly 856'd MARC!
+
 
 # // TEST COMMANDS
 
