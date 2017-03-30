@@ -96,5 +96,7 @@ $ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll
 $ rm {1..1000}_meta.mrk; rm itemlist.txt
 ```
 
+To test the .xml version of add856, substitute `_marc.xml`, `_marc`, and `.xml` for `_meta.mrk`, `_meta` and `.mrk` throughout the commands shown above (e.g. `$ touch {1..1000}_marc.xml`).
+
 
 
