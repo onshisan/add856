@@ -51,15 +51,16 @@ See Library of Congress MARC 21 bibliographic format spec, esp. http://www.loc.g
 
 9) Merge and/or convert .mrk files to .mrc or other file format(s) as desired for further processing or OPAC import. 
 
-// TEST COMMANDS
+# // TEST COMMANDS
 
 At the Bash command prompt, enter the following to familiarize yourself with the script. 
 
 Always run the script from the same directory as itemlist.txt and the batch of .mrk files to be processed.
-# $ touch {1..1000}_meta.mrk    # generate a set of 1000 test files:
-# $ ls -1 *.mrk | sed -e 's/\..*$//' | cat > itemlist.txt; sed -i 's/_meta//g' itemlist.txt     # generate itemlist.txt based on the .mrk files in your working directory, then strip "_meta" from each row to format for processing
-# $ bash add856_mrk.bash        # run script using test files
-# $ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll}_meta.mrk    # view contents of randomly-chosen file from test batch
-# $ rm {1..1000}_meta.mrk; rm itemlist.txt  													# delete test files:
+
+$ touch {1..1000}_meta.mrk    # generate a set of 1000 test files:
+$ ls -1 *.mrk | sed -e 's/\..*$//' | cat > itemlist.txt; sed -i 's/_meta//g' itemlist.txt     # generate itemlist.txt based on the .mrk files in your working directory, then strip "_meta" from each row to format for processing
+$ bash add856_mrk.bash        # run script using test files
+$ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll}_meta.mrk    # view contents of randomly-chosen file from test batch
+$ rm {1..1000}_meta.mrk; rm itemlist.txt  													# delete test files:
 
 
