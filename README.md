@@ -59,7 +59,7 @@ Always run the script from the same directory as itemlist.txt and the batch of .
 
 1) Generate a set of 1000 test files:
 
-```Bash
+```Shell
 $ touch {1..1000}_meta.mrk
 ```
 
