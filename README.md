@@ -2,7 +2,7 @@
 
 A simple Bash script to add 856 field tags to MARC records harvested from [Archive.org](http://archive.org).
 
-Current status: not ready for the limelight! But feel free to browse.
+Current status: add856_xml.bash is minimially functional. Some parameters that you may wish to edit are hard-coded; review documentation below as well as comments in the source code before processing your harvested metadata.
 
 
 # // ABOUT
