@@ -17,6 +17,3 @@ foo=$(wc -1 > itemlist.txt)       # see: http://stackoverflow.com/questions/1202
 echo "Whole string: " $foo		    # echo output
 
 # NOTES
-# echo ${foo:0:2} # extract 2 chars starting at index 0
-# echo `expr match "$foo" '[^0-9]'`	#attempt to match numeric substring in foo
-# echo ${foo%%'[\ *l]'}	#delete longest match of non-numerics from foo then echo remainder
