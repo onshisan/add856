@@ -59,22 +59,26 @@ Always run the script from the same directory as itemlist.txt and the batch of .
 
 1) Generate a set of 1000 test files:
 
-'$ touch {1..1000}_meta.mrk'
+`$ touch {1..1000}_meta.mrk`
 
 
 2) Generate itemlist.txt based on the .mrk files in your working directory, then strip the "_meta" suffix from each row to match Archive.org's identifier list / CSV output format for processing:
 
-'$ ls -1 *.mrk | sed -e 's/\..*$//' | cat > itemlist.txt; sed -i 's/_meta//g' itemlist.txt'
+```$ ls -1 *.mrk | sed -e 's/\..*$//' | cat > itemlist.txt; sed -i 's/_meta//g' itemlist.txt```
 
 
 3) Run script using test files:
 
-'$ bash add856_mrk.bash`
+`$ bash add856_mrk.bash`
 
 
 4) Display contents of randomly-chosen file from test batch for verification:
 
-`$ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll}_meta.mrk`
+```
+$ luckyRoll=$(shuf -i 1-25 -n 1);
+echo "File number "$luckyRoll;
+cat ${luckyRoll}_meta.mrk
+```
 
 
 5) Delete set of test files (if you modified the set size in step one, do the same here):
