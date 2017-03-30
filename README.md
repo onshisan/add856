@@ -1,6 +1,7 @@
 # // add856
 
-A simple Bash script to add 856 field tags to MARCXML records harvested from Archive.org
+A simple Bash script to add 856 field tags to MARCXML records harvested from Archive.org.
+
 Greg Smith // greg.smith@gmail.com // twitter: @onshi
 
 # // ABOUT
