@@ -34,7 +34,7 @@ $ wget -r -H -nc -np -nH --cut-dirs=1 -A .mrc -e robots=off -l1 -i itemlist.txt 
 ``` 
 You can adjust "-A" flag parameters to download other file formats (e.g., .xml, txt, .pdf) at the same time. In this way you may obtain the full-text of each item from Archive.org along with its metadata if you wish.
 
-<i><b>NB</b>: Depending on the length of your itemlist.txt file and your connection speed, this may take a <u>long</u></i>
+<i><b>NB</b>: Depending on the length of your itemlist.txt file and your connection speed, this may take a <u>long</u> time!</i>
 
 5)  Batch process .mrc files to .mrk format using [MarcEdit](http://marcedit.reeset.net/downloads): 
 > http://marcedit.reeset.net/downloads
