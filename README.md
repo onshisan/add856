@@ -29,8 +29,11 @@ See Library of Congress MARC 21 bibliographic format spec, esp. http://www.loc.g
     If your text editor does not support EOL conversion, see suggestions here:
          https://kb.iu.edu/d/acux
 
-4)	Harvest .mrc files for the set of items defined by itemlist.txt using wget at the Bash command prompt as follows: 
-    $ wget -r -H -nc -np -nH --cut-dirs=1 -A .mrc -e robots=off -l1 -i itemlist.txt -B 'http://archive.org/download/'
+4)	Harvest .mrc files for the set of items defined by itemlist.txt using wget at the Bash command prompt as follows:
+
+```shell
+$ wget -r -H -nc -np -nH --cut-dirs=1 -A .mrc -e robots=off -l1 -i itemlist.txt -B 'http://archive.org/download/'
+```
     Adjust "-A" flag parameters to download other file formats (e.g., .xml, txt, .pdf) at the same time. 
     In this way you may obtain the full-text of each item from Archive.org along with its metadata if you wish.
     NB: Depending on the length of your itemlist.txt file and your connection speed, this may take a long time.
