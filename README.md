@@ -73,8 +73,7 @@ Always run the script from the same directory as itemlist.txt and the batch of .
 
 
 4) Display contents of randomly-chosen file from test batch for verification:
-
-    $ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll}_meta.mrk
+`$ luckyRoll=$(shuf -i 1-25 -n 1); echo "File number "$luckyRoll; cat ${luckyRoll}_meta.mrk`
 
 
 5) Delete set of test files (if you modified the set size in step one, do the same here):
