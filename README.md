@@ -2,6 +2,8 @@
 
 A simple Bash script to add 856 field tags to MARC records harvested from Archive.org.
 
+Current status: not ready for the limelight! But feel free to browse.
+
 
 # // ABOUT
 
