@@ -4,7 +4,7 @@ A simple Bash script to add 856 field tags to MARC records harvested from [Archi
 
 Current project status: 
 <ul>
-<li><b>add856_xml.bash</b> is minimially functional. Some parameters that you may wish to edit are hard-coded; review documentation below as well as comments in the source code before processing your harvested metadata.
+<li><b>add856_xml.bash</b> is minimially functional. Some parameters you may wish to edit are hard-coded; please review documentation below as well as comments in the source code before processing your harvested metadata.
 <li><b>add856_mrk.bash</b> is not yet functional. 856 tag is appended after EOF. Subsequent versions will address this. Recommend converting to MARCXML using MarcEdit (see below) for use with add856_xml.bash in the meantime.
 </ul>
 
@@ -16,7 +16,7 @@ This is a specialized tool meant to quickly construct a basic MARC 856 tag withi
 It was designed for metadata harvested from the Internet Archive as described here:
 > http://blog.archive.org/2012/04/26/downloading-in/bulk-using-weget 
 
-Please note that add 856's output may require further processing to ensure full MARCXML / MARC-21 format compliance.
+Please note that add856's output may require further processing to ensure full MARCXML / MARC-21 format compliance.
 
 Be sure to backup, verify, validate, and spot-check your output before proceeding!
 
@@ -27,9 +27,9 @@ See Library of Congress' [MARC 21 bibliographic format](http://www.loc.gov/marc/
 1)	Obtain a CSV for the items of interest to you using [Archive.org's advanced search template](https://archive.org/advanced.search.php) here:</b>
 > https://archive.org/advanced.search.php
 
-2)	Using a text editor, delete "identifier" from the first row and re-name the file "itemlist.txt" for use with this script.
+2)	Using a text editor, delete the content of the first row ("identifier") and save the file as "itemlist.txt" for use with this script.
 
-3)	Save itemlist.txt with Unix end-of-line (EOL) or otherwise convert it if you are text-editing on a Windows machine. If your text editor does not support EOL conversion, see [suggestions](https://kb.iu.edu/d/acux) here:
+3)	Save itemlist.txt with Unix end-of-line (EOL) - or otherwise convert it - if you are text-editing on a Windows machine. If your text editor does not support EOL conversion, see [suggestions](https://kb.iu.edu/d/acux) here:
 > https://kb.iu.edu/d/acux
 
 4)	Harvest .mrc files for the set of items defined by itemlist.txt using wget at the Bash command prompt as follows:
@@ -43,7 +43,7 @@ You can adjust "-A" flag parameters to download other file formats (e.g., .xml, 
 5)  Batch process .mrc files to .mrk format using [MarcEdit](http://marcedit.reeset.net/downloads): 
 > http://marcedit.reeset.net/downloads
         
-MarcEdit saves the new .mrk files in a sub-directory called "/processed_files". You may wish with copy the script and itemlist.txt there before continuing. Alternatively, move the files to the same location as the script and itemlist.txt.
+MarcEdit saves the new .mrk files in a sub-directory called "/processed_files". You may wish to copy the script and itemlist.txt there before continuing. Alternatively, move the files to the same location as the script and itemlist.txt.
 
 6)  Review and edit $z subfield display text in line 27 below to meet your needs.
 
@@ -51,7 +51,7 @@ MarcEdit saves the new .mrk files in a sub-directory called "/processed_files". 
 
 Alternatively, run it wherever the batch of .mrk files and your itemlist.txt file reside.
 
-Tip: If the script runs but unexpectedly processes 0 records, double-check itemlist.txt has Unix EOL (See (3) above!) and contains identifiers corresponding to your batch of metadata files.
+Tip: If the script runs but unexpectedly processes 0 records, double-check to ensure that itemlist.txt has Unix EOL (See (3) above!) and contains identifiers corresponding to your batch of metadata files.
 
 8) Open an arbitrarily-selected .mrk file in MarcEdit and validate to ensure there are no issues before proceeding. Consider making any necessary revisions through batch processing using MarcEdit.
 
