@@ -1,4 +1,4 @@
-# // add856
+# add856
 
 A simple Bash script to add 856 field tags to MARC records harvested from [Archive.org](http://archive.org).
 
@@ -9,7 +9,7 @@ Current project status:
 </ul>
 
 
-# // ABOUT
+## About
 
 This is a specialized tool meant to quickly construct a basic MARC 856 tag within each file in a batch.
 
@@ -22,7 +22,7 @@ Be sure to backup, verify, validate, and spot-check your output before proceedin
 
 See Library of Congress' [MARC 21 bibliographic format](http://www.loc.gov/marc/bibliographic/) spec, especially [regarding the 856 field tag](http://www.loc.gov/marc/bibliographic/bd856.html) for background.
 
-# // METHOD
+## Method
 
 1)	Obtain a CSV for the items of interest to you using [Archive.org's advanced search template](https://archive.org/advanced.search.php) here:</b>
 > https://archive.org/advanced.search.php
@@ -60,7 +60,7 @@ Tip: If the script runs but unexpectedly processes 0 records, double-check to en
 10) Enjoy your freshly 856'd MARC!
 
 
-# // TEST COMMANDS
+## Test commands
 
 At the Bash command prompt, enter the following to familiarize yourself with the .mrk version of add856. 
 
